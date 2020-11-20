@@ -1,8 +1,7 @@
 import random
 import os
 
-from art import logo
-from art import vs
+from art import logo, vs
 from game_data import data
 
 
@@ -18,7 +17,7 @@ def get_text(x):
 
 
 def print_line(items, y):
-    '''Requires the initial text, and the item number from the data list, which is then printed to the console'''
+    '''Requires the list of items, and the item number, which is then printed to the console'''
     text = get_text(y)
     name = items[y]["name"]
     description = items[y]["description"]
@@ -78,7 +77,7 @@ def game():
         # get user answer
         choice = get_choice()
 
-        # compare item follower_count and check answer
+        # compare item follower_count to get correct answer
         answer = get_answer(items)
 
         cls()
@@ -93,10 +92,9 @@ def game():
             items[0] = items[1]
 
             # REPEAT ...
-            continue
 
         else:
-            print(f"Sorry that's wrong. Final score: {score}\n")
+            print(f"Sorry, that's wrong. Final score: {score}\n")
 
             # END
             end_game = True
