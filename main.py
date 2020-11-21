@@ -7,7 +7,7 @@ from game_data import data
 
 def cls():
     """Cross-platform clear screen"""
-    os.system('cls' if os.name=='nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def get_text(x):
@@ -48,7 +48,7 @@ def get_answer(items):
 
 
 def game():
-    items = [0,1]
+    items = [0, 1]
     score = 0
     end_game = False
 
@@ -103,7 +103,6 @@ def game():
         print(f"A: {items[0]['name']} has {items[0]['follower_count']} million followers")
         print(f"B: {items[1]['name']} has {items[1]['follower_count']} million followers")
         print("\n\n")
-
 
 
 game()
