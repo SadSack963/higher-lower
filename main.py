@@ -6,18 +6,18 @@ from game_data import data
 
 
 def cls():
-    '''Cross-platform clear screen'''
+    """Cross-platform clear screen"""
     os.system('cls' if os.name=='nt' else 'clear')
 
 
 def get_text(x):
-    '''Returns the initial text which is subsequently printed in front of the list item'''
+    """Returns the initial text which is subsequently printed in front of the list item"""
     text_list = ["Compare A", "Against B"]
     return text_list[x]
 
 
 def print_line(items, y):
-    '''Requires the list of items, and the item number, which is then printed to the console'''
+    """Requires the list of items, and the item number, which is then printed to the console"""
     text = get_text(y)
     name = items[y]["name"]
     description = items[y]["description"]
@@ -26,7 +26,7 @@ def print_line(items, y):
 
 
 def get_choice():
-    '''Get the choice of A or B from the player, and return 0 or 1 accordingly'''
+    """Get the choice of A or B from the player, and return 0 or 1 accordingly"""
     answer = ""
     while answer != "a" and answer != "b":
         answer = input("Who has more followers? Type 'A' or 'B' : ").lower()
@@ -40,7 +40,7 @@ def get_choice():
 
 
 def get_answer(items):
-    '''Compare items and return 0 if A > B, 1 if A < B'''
+    """Compare items and return 0 if A > B, 1 if A < B"""
     if items[0]["follower_count"] > items[1]["follower_count"]:
         return 0
     else:
